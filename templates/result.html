@@ -1,42 +1,115 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
-		<title>Movies Reviews Classifier</title>
-		<link rel="shortcut icon" href="{{ url_for('static', filename='spam-favicon.ico') }}">
-		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
-	</head>
-
-	<body>
-
-		<!-- Website Title -->
-		<div class="container">
-			<h2 class='container-heading'><span>Movies Reviews Classifier</span></h2>
-	        	<div class='description'>
-				<p>A Machine Learning Web App which is implemented using Flask</p>
-			</div>
-		</div>
-
-		<!-- Result -->
-		<div class="results">
-			{% if prediction==1 %}
-				<h1>Prediction: <span class='danger'>Positive Review.</span></h1>
-				<img class="gif" src="https://media.giphy.com/media/l1J9vkau0r5BYk07e/giphy.gif" alt="happy Image" , height="400" , width="400">
-			{% elif prediction==0 %}
-				<h1>Prediction: <span class='safe'>Negative Review</span></h1>
-				<img class="gif" src="https://media.giphy.com/media/Pn1h5Un3LZD9uq3u07/giphy.gif" alt="sad image" , height="400" , width="400">
-			{% endif %}
-		</div>
-
-		<!-- Footer -->
-        <div class='footer'>
-            <div class="contact">
-                <a target="_blank" href="https://www.linkedin.com/in/amaan-ansari-688275219/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
-            </div> 
-            <p class='footer-description'>Made by Amaan Ansari.</p>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movies Reviews Classifier</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-container {
+            max-width: 800px;
+            width: 100%;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .title {
+            color: #2d3748;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            color: #4a5568;
+            font-size: 1.2rem;
+        }
+        .results-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .prediction {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .prediction-positive {
+            color: #38a169;
+            font-weight: 600;
+        }
+        .emoji-container {
+            margin: 2rem 0;
+            position: relative;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .emoji {
+            font-size: 8rem;
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .sentiment-text {
+            color: #38a169;
+            font-size: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .try-another-btn {
+            background-color: #4299e1;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            font-weight: 500;
+        }
+        .try-another-btn:hover {
+            background-color: #3182ce;
+            transform: translateY(-2px);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1 class="title">Movies Reviews Classifier</h1>
+            <p class="subtitle">Your AI-powered movie review analyzer, combining Flask and cutting-edge NLP technology</p>
         </div>
 
-	</body>
+        <div class="results-card">
+            <h2 class="prediction">
+                Prediction: <span class="prediction-positive">Positive Review</span>
+            </h2>
+
+            <div class="emoji-container">
+                <!-- Using emoji instead of GIF for reliability -->
+                <span class="emoji">😊</span>
+            </div>
+
+            <p class="sentiment-text">Great! This review expresses positive sentiment.</p>
+
+            <a href="{{ url_for('home') }}" class="try-another-btn">
+                Try Another Review
+            </a>
+        </div>
+    </div>
+</body>
 </html>

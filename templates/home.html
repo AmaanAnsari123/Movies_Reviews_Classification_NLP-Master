@@ -1,40 +1,125 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Movies Reviews Classifier</title>
-        <link rel="shortcut icon" href="{{ url_for('static', filename='spam-favicon.ico') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
-    </head>
-
-    <body>
-
-        <!-- Website Title -->
-    	<div class="container">
-    		<h2 class='container-heading'><span>Movies Reviews Classifier</span> </h2>
-            <div class='description'>
-    			<p>A Machine Learning Web App which is implemented using Flask</p>
-    		</div>
-    	</div>
-
-        <!-- Text Area -->
-    	<div class="ml-container">
-    		<form action="{{ url_for('predict') }}" method="POST">
-        		<textarea class='message-box' name="message" rows="15" cols="75" placeholder="Enter Your Message Here... (ex: This is the worst movie, i have ever seen in my life  OR  This is the wonderful movie, i have ever seen in my life)"></textarea><br/>
-        		<input type="submit" class="my-cta-button" value="Predict">
-        	</form>
-    	</div>
-
-        <!-- Footer -->
-        <div class='footer'>
-            <div class="contact">
-                <a target="_blank" href="https://github.com/JatinSadhwani02/Movies_Review_Classification_NLP"><i class="fab fa-github fa-lg contact-icon"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/in/jatin-sadhwani-404531152/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
-            </div> 
-            <p class='footer-description'>Made with ❤️ by Jatin Sadhwani.</p>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movies Reviews Classifier</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .title-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .container-heading {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .description {
+            color: #34495e;
+            font-size: 1.1rem;
+        }
+        .review-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .message-box {
+            resize: none;
+            border: 2px solid #e0e0e0;
+            transition: border-color 0.3s ease;
+        }
+        .message-box:focus {
+            border-color: #3498db;
+            box-shadow: none;
+        }
+        .predict-btn {
+            background: #3498db;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        .predict-btn:hover {
+            transform: translateY(-2px);
+            background: #2980b9;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem;
+        }
+        .contact-icon {
+            color: #2c3e50;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .contact-icon:hover {
+            color: #3498db;
+        }
+        .footer-description {
+            margin-top: 1rem;
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Title Section -->
+        <div class="title-section">
+            <h1 class="container-heading">Movies Reviews Classifier</h1>
+            <div class="description">
+                <p class="mb-0">A Machine Learning Web App built with Flask and Natural Language Processing</p>
+            </div>
         </div>
 
-    </body>
+        <!-- Review Form -->
+        <div class="review-form">
+            <form action="{{ url_for('predict') }}" method="POST">
+                <div class="mb-4">
+                    <label for="review" class="form-label fw-bold">Enter Your Movie Review</label>
+                    <textarea 
+                        class="form-control message-box" 
+                        id="review"
+                        name="message" 
+                        rows="8" 
+                        placeholder="Share your thoughts about the movie... (e.g., 'This is the most captivating film I've seen this year!' or 'Unfortunately, this movie fell short of my expectations.')"
+                    ></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary predict-btn">
+                        <i class="fas fa-magic me-2"></i>Analyze Review
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="contact mb-2">
+                <a target="_blank" href="https://github.com/AmaanAnsari123/Movies_Reviews_Classification_NLP-Master" class="text-decoration-none">
+                    <i class="fab fa-github contact-icon"></i>
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/amaan-ansari-688275219/" class="text-decoration-none">
+                    <i class="fab fa-linkedin contact-icon"></i>
+                </a>
+            </div>
+            <p class="footer-description mb-0">Made by</i>Amaan Ansari</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
