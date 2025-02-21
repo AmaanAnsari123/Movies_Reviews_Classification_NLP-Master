@@ -3,19 +3,33 @@
 <h3>Dataset Link : https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews</h3>
 <br>
 
-<h3> Deployment Link : https://movies-reviews-classifier.herokuapp.com/ </h3>
 <br>
 
-This project involves building an end-to-end Sentiment Analysis application using Natural Language Processing (NLP) techniques. The primary goal is to classify movie reviews as positive or negative using TF-IDF vectorization and a Naïve Bayes classifier.
+# 📌 Sentiment Analysis Using Naïve Bayes and Flask  
 
-Key Steps in the Project:
-Data Preprocessing: Applied stemming to process text and converted it into numerical features using TF-IDF.
-Model Training & Selection: Trained a Naïve Bayes classifier and tested different models to find the best-performing one.
-Model Serialization: Saved the trained model as a .pkl file for later use.
-Flask-Based Web Application:
-Built a Flask app to serve predictions via a simple web interface.
-Created home.html for input submission and result.html to display predictions.
-The app takes a user’s review as input, processes it, and returns the sentiment prediction.
+## 📖 Project Overview  
+This project involves building an **end-to-end Sentiment Analysis application** using **Natural Language Processing (NLP)** techniques. The primary goal is to classify **movie reviews** as positive or negative using **TF-IDF vectorization** and a **Naïve Bayes classifier**.
+
+## 🚀 Features  
+- **Text Preprocessing:** Applied **stemming** and converted text into numerical features using **TF-IDF**.  
+- **Model Training & Selection:**  
+  - Used **Naïve Bayes classifier** to train the model.  
+  - Tested and selected the best model based on performance.  
+- **Model Deployment:**  
+  - Saved the trained model as a `.pkl` file.  
+  - Developed a **Flask-based web application** for real-time predictions.  
+- **Web Interface:**  
+  - `home.html` → User can input a review.  
+  - `result.html` → Displays the predicted sentiment.  
+- **REST API Implementation:**  
+  - `POST /predict` → Takes text input and returns **sentiment prediction**.
+
+## 🛠️ Installation & Setup  
+### 1️⃣ Clone the Repository  
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
 REST API Integration:
 The application exposes a POST endpoint (/predict) that takes text input and returns a sentiment prediction.
 <br>
