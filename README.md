@@ -6,8 +6,18 @@
 <h3> Deployment Link : https://movies-reviews-classifier.herokuapp.com/ </h3>
 <br>
 
-I implemented a Natural Language Processing based project. The project is Movies Reviews Sentiment Analysis who classify that the given review about the movie is a positive review or a negative review. So i train my model on the movies reviews dataset and use that model for implement end to end application. End-to-end means i deployed this model using the Python Framework flask on the localhost. And also deploy on the heroku. So i use a naive-bayes algorithm to train my model, this is probability based algorithm.
+This project involves building an end-to-end Sentiment Analysis application using Natural Language Processing (NLP) techniques. The primary goal is to classify movie reviews as positive or negative using TF-IDF vectorization and a Naïve Bayes classifier.
 
+Key Steps in the Project:
+Data Preprocessing: Applied stemming to process text and converted it into numerical features using TF-IDF.
+Model Training & Selection: Trained a Naïve Bayes classifier and tested different models to find the best-performing one.
+Model Serialization: Saved the trained model as a .pkl file for later use.
+Flask-Based Web Application:
+Built a Flask app to serve predictions via a simple web interface.
+Created home.html for input submission and result.html to display predictions.
+The app takes a user’s review as input, processes it, and returns the sentiment prediction.
+REST API Integration:
+The application exposes a POST endpoint (/predict) that takes text input and returns a sentiment prediction.
 <br>
 <h1> Working of Movies Reviews Classifier</h1>
 <br>
